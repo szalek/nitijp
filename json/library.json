@@ -1,0 +1,28 @@
+{
+  "library": {
+    "books": [
+      {
+        "isbn": "9788381291234",
+        "title": "Quick Response Management",
+        "author": "Jan Kowalsk",
+        "year": 2024,
+        "genre": "business",
+        "price": {
+          "value": 129.90,
+          "currency": "PLN"
+        }
+      },
+      {
+        "isbn": "9788328331230",
+        "title": "Automatyka i Robotyka",
+        "author": "Jan Kowalski",
+        "year": 2021,
+        "genre": "engineering",
+        "price": {
+          "value": 89.00,
+          "currency": "PLN"
+        }
+      }
+    ]
+  }
+}
