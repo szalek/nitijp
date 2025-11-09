@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+  
+  <xs:element name="library">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="book" type="BookType" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+
+   
+    <xs:unique name="uniqueIsbn">
+      <xs:selector xpath="book"/>
+      <xs:field xpath="@isbn"/>
+    </xs:unique>
+  </xs:element>
+
+ 
+  <xs:complexType name="BookType">
+    <xs:sequence>
+      <xs:element name="title" type="xs:string"/>
+      <xs:element name="author" type="xs:string"/>
+      <xs:element name="year">
+        <xs:simpleType>
+          <xs:restriction base="xs:gYear">
+            <xs:minInclusive value="1500"/>
+            <xs:maxInclusive value="2100"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="genre" type="GenreType"/>
+      <xs:element name="price" type="PriceType"/>
+    </xs:sequence>
+    <xs:attribute name="isbn" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="\d{13}"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+
+  
+  <xs:simpleType name="GenreType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="business"/>
+      <xs:enumeration value="engineering"/>
+      <xs:enumeration value="it"/>
+      <xs:enumeration value="science"/>
+      <xs:enumeration value="other"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  
+  <xs:complexType name="PriceType">
+    <xs:simpleContent>
+      <xs:extension base="xs:decimal">
+        <xs:attribute name="currency" use="required">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:pattern value="[A-Z]{3}"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:attribute>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+</xs:schema>

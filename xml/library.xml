@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="library.xsd">
+  <book isbn="9788381291234">
+    <title>Quick Response Management</title>
+    <author>Jan Kowalski</author>
+    <year>2024</year>
+    <genre>business</genre>
+    <price currency="PLN">129.90</price>
+  </book>
+
+  <book isbn="9788328331230">
+    <title>Automatyka i Robotyka</title>
+    <author>Jan Kowalski</author>
+    <year>2021</year>
+    <genre>engineering</genre>
+    <price currency="PLN">89.00</price>
+  </book>
+</library>
