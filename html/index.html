@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>datapicker</title>
+           <link rel="stylesheet" href="dist/daterangepicker.min.css">
+        <script type="text/javascript" src="moment.min.js"></script>
+        <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="dist/jquery.daterangepicker.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+        
+        </head>
+        <body>
+
+            <form action="">
+                <label for="start">data przyjazdu:</label>
+                <input type="date" id="datePicker1" name="data-przyjadu" value="" min="" max="" />
+        
+                    <label for="start">data wyjazdu:</label>
+                    <input type="date" id="datePicker2" name="data-wyjazdu" value="" min="" max="" />
+                    
+                    <label for="number">ilość gości</label>
+                    <input type="number" id="iloscgosci" name="ilosc-gosci" min="1" max="100" list="defaultNumbers"  />
+                    <span class="validity"></span>
+                    <datalist id="defaultNumbers">
+                    <option value="1"></option>
+                    <option value="2"></option>
+                    <option value="3"></option>
+                    <option value="4"></option>
+                    <option value="5"></option>
+                    <option value="6"></option>
+                    </datalist>
+
+                    <label for="selcet">ilość gości</label>
+                    <select>
+                        <option>goście<button>-</button>1<button>+</button></option>
+                    </select>
+        <p><button>sprawdz dostępność</button></p>
+        </form>
+        <script src="\nowy.js"></script>
+        <input type="text" name="daterange" value="01/01/2018 - 01/15/2018" />
+
+<script>
+$(function() {
+  $('input[name="daterange"]').daterangepicker({
+    opens: 'left'
+  }, function(start, end, label) {
+    console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+  });
+});
+</script>
+        </body>
+        
+        </html>
