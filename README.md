@@ -15,6 +15,7 @@ Krótki opis repozytorium przygotowanego na zadanie domowe.
 | `library.xsd`   | Schemat XML opisujący strukturę pliku `library.xml`.                 |
 | `composer.json` | Konfiguracja przykładowego projektu PHP/Laravel z listą zależności.  |
 | `README.md`     | Ten plik – opis repozytorium i zadania.                              |
+| `markdown.md`   | Przykładowy plik markdown.                                           |
 
 ---
 
